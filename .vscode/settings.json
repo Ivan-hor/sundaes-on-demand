@@ -1,0 +1,13 @@
+{
+  "eslint.options": {
+    "configFale": ".eslintrc.json"
+  },
+  "eslint.validate": ["javascript", "javascriptreact"],
+  "editor.codeActionsOnSeve": {
+    "source.fixAll.eslint": true
+  },
+  "eslint.alwaysShowStatus": true,
+
+  "editor.defaultFormatter": "esbenp.prettier-vscode",
+  "editor.formatOnSave": true
+}
