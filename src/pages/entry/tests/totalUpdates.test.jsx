@@ -4,7 +4,7 @@ import { OrderDetailsProvider } from '../../../contexts/OrderDetails';
 import Options from '../Options';
 
 test('updates scoop subtotal when scoops change', async () => {
-  render(<Options optionsType="scoops" />, {wrapper: OrderDetailsProvider});
+  render(<Options optionsType="scoops" />, { wrapper: OrderDetailsProvider });
 
   //make sure total starts out $0.00
   const scoopsSubtotal = screen.getByText('Scoops total $', { exact: false });
