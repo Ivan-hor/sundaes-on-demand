@@ -1,4 +1,4 @@
-import { render, screen } from '@testing-library/react';
+import { render, screen } from '../../../test-utils/testing-library-utils';
 import Options from '../Options';
 
 test('display image for each scoop option from server', async () => {
@@ -19,9 +19,9 @@ test('display image for each scoop option from server', async () => {
 
   // confirm alt text of images
   // @ts-ignore
-  //const altText = scoopImages.map((element) => element.alt);
+  const altText = scoopImages.map((element) => element.alt);
   //TODO this test wont work ----------!!!!!!!! Need to find some solution
-  //expect(altText).toEqual(['Chocolate scoop', 'Vanilla scoop']);
+  expect(altText).toEqual(['Chocolate scoop', 'Vanilla scoop']);
 });
 
 test('display image for each topping options from server', async () => {

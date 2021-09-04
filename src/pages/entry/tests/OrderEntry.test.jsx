@@ -1,10 +1,14 @@
-import { render, screen, waitFor } from '@testing-library/react';
+import {
+  render,
+  screen,
+  waitFor,
+} from '../../../test-utils/testing-library-utils';
 import { rest } from 'msw';
 import { server } from '../../../mocks/server';
 
 import OrderEntry from '../OrderEntry';
 
-test.only('handlers error for scoops and toppings routes', async () => {
+test('handlers error for scoops and toppings routes', async () => {
   server.resetHandlers(
     rest.get('http://localhoct:3030/scoops', (req, res, ctx) =>
       res(ctx.status(500)),
@@ -17,16 +21,16 @@ test.only('handlers error for scoops and toppings routes', async () => {
   render(<OrderEntry />);
 
   await waitFor(async () => {
-	const alerts = await screen.findAllByRole('alert');
+    const alerts = await screen.findAllByRole('alert');
 
-	expect(alerts).toHaveLength(2)
-  })
-  
-
-  
+    expect(alerts).toHaveLength(2);
+  });
 });
 
-test('not real test', ()=> {
-	// if you ose "test.only" you dot run this test 
-	// or you can use "test.skip" revers of "test.only"
-})
+//test.only('not real test', () => {
+// if you ose "test.only" you dot run this tes
+//});
+
+//test.skip('not real test', () => {
+// or you can use "test.skip" revers of "test.only"
+// });
